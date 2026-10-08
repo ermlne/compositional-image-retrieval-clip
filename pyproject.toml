@@ -1,0 +1,7 @@
+[project]
+name = "compositional-image-retrieval-clip"
+version = "0.1.0"
+description = "Compositional image retrieval on CelebA with frozen CLIP and a learned projection head"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

@@ -1,0 +1,36 @@
+{
+  "data": "2026-08-29T01:10:12",
+  "seeds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "gammas": [
+    1.1380770206451416,
+    1.1335906982421875,
+    1.1355048418045044,
+    1.1448622941970825
+  ],
+  "n_reference": 400,
+  "dim_span": 40,
+  "calibratore_casuale": -0.00010356068378314376,
+  "risultati": [
+    {
+      "etichetta": "DENTRO lo span (i 40 attributi)",
+      "accordo_totale": 0.5974815856665373,
+      "accordo_solo_reference": 0.7280072867870331,
+      "accordo_canale_c": 0.35295074779035834,
+      "quota_norma_canale_c": 0.590885722823441,
+      "n_direzioni": 40
+    },
+    {
+      "etichetta": "FUORI dallo span (casuali ortogonali)",
+      "accordo_totale": 0.7217462716003259,
+      "accordo_solo_reference": 0.7280072867870331,
+      "accordo_canale_c": 0.07763554209765668,
+      "quota_norma_canale_c": 0.10091547267511487,
+      "n_direzioni": 40
+    }
+  ]
+}

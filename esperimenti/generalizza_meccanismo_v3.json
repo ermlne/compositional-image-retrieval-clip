@@ -1,0 +1,49 @@
+{
+ "prodotto_da": "esperimenti/generalizza_meccanismo.py",
+ "tag": "v3",
+ "cache": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/drive/cache/dati_pool.pt",
+ "ckpt_dir": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/ckpt_v3_12",
+ "n_membri": 12,
+ "n_reference": 500,
+ "gruppi": {
+  "CelebA (VISTI)": {
+   "n": 40,
+   "quota_in_span": 1.0,
+   "indice_antisimmetria": 0.2313255477696657,
+   "norma_risposta": 1.7092608350018659
+  },
+  "AwA2 (mai visti)": {
+   "n": 85,
+   "quota_in_span": 0.5782418847084045,
+   "indice_antisimmetria": 0.09665199020767913,
+   "norma_risposta": 0.7758498890727175
+  },
+  "OVAD (mai visti)": {
+   "n": 102,
+   "quota_in_span": 0.6316766738891602,
+   "indice_antisimmetria": 0.11166515189460387,
+   "norma_risposta": 0.8812073426552459
+  },
+  "tutti i MAI VISTI": {
+   "n": 187,
+   "quota_in_span": 0.6073881983757019,
+   "indice_antisimmetria": 0.10484098749145626,
+   "norma_risposta": 0.8333175910268238
+  }
+ },
+ "visti_contro_mai_visti": {
+  "p_mannwhitney": 8.945080710680132e-20,
+  "indice_visti": 0.2313255477696657,
+  "indice_mai_visti": 0.10484098749145626,
+  "in_span_predice_asimmetria": {
+   "rho": 0.7513075361797555,
+   "p": 3.162218157643705e-35
+  },
+  "in_span_predice_norma": {
+   "rho": 0.7567854245959943,
+   "p": 5.34069817373162e-36
+  },
+  "membri_concordi": 12,
+  "n_membri": 12
+ }
+}

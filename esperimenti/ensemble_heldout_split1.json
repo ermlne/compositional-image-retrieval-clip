@@ -1,0 +1,103 @@
+{
+  "seed": 2026,
+  "split": 1,
+  "holdout": [
+    "Big_Lips",
+    "Big_Nose",
+    "Black_Hair",
+    "Bushy_Eyebrows",
+    "Heavy_Makeup",
+    "Male",
+    "Pale_Skin",
+    "Smiling",
+    "Wearing_Earrings",
+    "Wearing_Hat"
+  ],
+  "voci": {
+    "seed 2026 da solo": {
+      "visti": {
+        "delta_pp": 7.461894570470346,
+        "p": 0.0,
+        "modello": 32.01703778898543
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.506539278951985,
+        "p": 0.0047,
+        "modello": 16.39990722827087
+      },
+      "miste": {
+        "delta_pp": 0.5244379752648883,
+        "p": 0.8016,
+        "modello": 11.466076359924207
+      }
+    },
+    "seed 2027 da solo": {
+      "visti": {
+        "delta_pp": 7.181207553031102,
+        "p": 0.0,
+        "modello": 31.736350771546185
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.1149988629638115,
+        "p": 0.0121,
+        "modello": 16.791447644259037
+      },
+      "miste": {
+        "delta_pp": 0.480505447074621,
+        "p": 0.8346,
+        "modello": 11.42214383173394
+      }
+    },
+    "seed 2028 da solo": {
+      "visti": {
+        "delta_pp": 6.982215276980163,
+        "p": 0.0,
+        "modello": 31.537358495495248
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.553553136997355,
+        "p": 0.0058,
+        "modello": 16.352893370225498
+      },
+      "miste": {
+        "delta_pp": 0.14910745027590774,
+        "p": 0.9473,
+        "modello": 11.090745834935225
+      }
+    },
+    "seed 2029 da solo": {
+      "visti": {
+        "delta_pp": 6.505818541312504,
+        "p": 0.0,
+        "modello": 31.06096175982759
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.143390919769222,
+        "p": 0.0112,
+        "modello": 16.763055587453632
+      },
+      "miste": {
+        "delta_pp": 0.3597225539628853,
+        "p": 0.8649,
+        "modello": 11.301360938622205
+      }
+    },
+    "ENSEMBLE dei 4": {
+      "visti": {
+        "delta_pp": 7.5168736748578935,
+        "p": 0.0,
+        "modello": 32.072016893372975
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.281794676263389,
+        "p": 0.0119,
+        "modello": 16.62465183095946
+      },
+      "miste": {
+        "delta_pp": 0.691768248559861,
+        "p": 0.7512,
+        "modello": 11.633406633219181
+      }
+    }
+  }
+}

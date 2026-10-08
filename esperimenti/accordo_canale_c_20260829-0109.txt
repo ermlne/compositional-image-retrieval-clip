@@ -1,0 +1,39 @@
+====================================================================================================
+ACCORDO FRA I MODELLI — il canale delle condizioni, isolato dal canale della reference
+====================================================================================================
+log: accordo_canale_c_20260829-0109.txt   json: accordo_canale_c_20260829-0109.json
+
+4 modelli (seed (1, 2, 3, 4)), gamma = [1.138, 1.134, 1.136, 1.145]
+direzioni testuali (40, 512), D = 512
+reference campionate: (400, 512)
+span delle direzioni testuali: 40 dimensioni su 512
+residuo massimo di ortogonalita' delle direzioni 'fuori': 1.51e-07
+
+====================================================================================================
+RISULTATO
+====================================================================================================
+direzioni                                 totale   solo ref   canale c   |c|/|tot|
+DENTRO lo span (i 40 attributi)          +0.5975    +0.7280    +0.3530       0.591
+FUORI dallo span (casuali ortogonali)    +0.7217    +0.7280    +0.0776       0.101
+
+  calibratore (vettori casuali indipendenti): -0.0001
+
+  totale     = la misura di ensemble_seed.py, non isolata
+  solo ref   = accordo sul termine net([r ; 0]), che non dipende dalle condizioni
+  canale c   = accordo su net([r ; c]) - net([r ; 0]), il contributo del testo
+  |c|/|tot|  = quanta della norma della correzione totale viene dal canale c
+
+====================================================================================================
+VERDETTO
+====================================================================================================
+  la misura originale e' riprodotta (~+0.72 fuori, ~+0.60 dentro)? SI
+  fuori dallo span, isolando il canale c l'accordo passa da +0.7217 a +0.0776 (-0.6441)
+  e il canale c pesa solo il 10.1% della norma della correzione, contro il 59.1% dentro
+
+  IL CONFONDIMENTO C'ERA. Fuori dallo span i modelli NON concordano sul canale
+  delle condizioni: l'accordo apparente veniva dal termine solo-reference, che e'
+  condiviso. Quella parte e' quindi specifica del modello — l'idea di spegnerla
+  (weight decay, o vincolare W_c allo span) torna in gioco, ed e' la sez. 6b di
+  piano-interpretabilita.md, l'unica casella del piano mai provata.
+
+Salvato: accordo_canale_c_20260829-0109.txt e accordo_canale_c_20260829-0109.json

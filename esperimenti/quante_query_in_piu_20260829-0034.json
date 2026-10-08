@@ -1,0 +1,120 @@
+{
+  "data": "2026-08-29T00:36:07",
+  "seed": 2026,
+  "n_prova": 120,
+  "resa_per_condizioni": {
+    "1": {
+      "spazio_totale": 80,
+      "provate": 80,
+      "valide": 80,
+      "resa": 1.0,
+      "esempi": 2740,
+      "esempi_per_provata": 34.25,
+      "ref_per_query_valida": 34.25,
+      "secondi": 31.370705127716064
+    },
+    "2": {
+      "spazio_totale": 3120,
+      "provate": 120,
+      "valide": 100,
+      "resa": 0.8333333333333334,
+      "esempi": 1876,
+      "esempi_per_provata": 15.633333333333333,
+      "ref_per_query_valida": 18.76,
+      "secondi": 18.885951042175293
+    },
+    "3": {
+      "spazio_totale": 79040,
+      "provate": 120,
+      "valide": 63,
+      "resa": 0.525,
+      "esempi": 653,
+      "esempi_per_provata": 5.441666666666666,
+      "ref_per_query_valida": 10.365079365079366,
+      "secondi": 9.13538146018982
+    },
+    "4": {
+      "spazio_totale": 1462240,
+      "provate": 120,
+      "valide": 27,
+      "resa": 0.225,
+      "esempi": 184,
+      "esempi_per_provata": 1.5333333333333334,
+      "ref_per_query_valida": 6.814814814814815,
+      "secondi": 4.567796945571899
+    },
+    "5": {
+      "spazio_totale": 21056256,
+      "provate": 120,
+      "valide": 16,
+      "resa": 0.13333333333333333,
+      "esempi": 64,
+      "esempi_per_provata": 0.5333333333333333,
+      "ref_per_query_valida": 4.0,
+      "secondi": 3.275925874710083
+    }
+  },
+  "stime_configurazioni": {
+    "attuale  {1:80, 2:80, 3:60}": {
+      "targets": {
+        "1": 80,
+        "2": 80,
+        "3": 60
+      },
+      "query_valide": 178.16666666666669,
+      "esempi": 4317.166666666666,
+      "fattore": 1.0,
+      "minuti_stimati": 2.6,
+      "direzioni_distinte": 220
+    },
+    "2x sulle composte  {1:80, 2:160, 3:120}": {
+      "targets": {
+        "1": 80,
+        "2": 160,
+        "3": 120
+      },
+      "query_valide": 276.33333333333337,
+      "esempi": 5894.333333333333,
+      "fattore": 1.365324479789986,
+      "minuti_stimati": 3.5498436474539634,
+      "direzioni_distinte": 360
+    },
+    "4x sulle composte  {1:80, 2:320, 3:240}": {
+      "targets": {
+        "1": 80,
+        "2": 320,
+        "3": 240
+      },
+      "query_valide": 472.6666666666667,
+      "esempi": 9048.666666666666,
+      "fattore": 2.095973439369957,
+      "minuti_stimati": 5.449530942361889,
+      "direzioni_distinte": 640
+    },
+    "4x + quattro condizioni": {
+      "targets": {
+        "1": 80,
+        "2": 320,
+        "3": 240,
+        "4": 240
+      },
+      "query_valide": 526.6666666666667,
+      "esempi": 9416.666666666666,
+      "fattore": 2.18121453113539,
+      "minuti_stimati": 5.671157780952014,
+      "direzioni_distinte": 880
+    },
+    "8x sulle composte  {1:80, 2:640, 3:480}": {
+      "targets": {
+        "1": 80,
+        "2": 640,
+        "3": 480
+      },
+      "query_valide": 865.3333333333334,
+      "esempi": 15357.333333333332,
+      "fattore": 3.5572713585299,
+      "minuti_stimati": 9.24890553217774,
+      "direzioni_distinte": 1200
+    }
+  }
+}

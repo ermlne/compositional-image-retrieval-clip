@@ -1,0 +1,97 @@
+{
+ "prodotto_da": "esperimenti/antisimmetria_e_ablazione.py",
+ "tag": "v3",
+ "cache": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/drive/cache/dati_pool.pt",
+ "ckpt_dir": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/ckpt_v3_12",
+ "n_reference": 1000,
+ "antisimmetria": {
+  "ms1400_tau0.01_wd0.0001_h512_q11_off_cx.pt": {
+   "indice": 0.3467513624578714,
+   "rapporto_lunghezze": 0.7541443698108197
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q12_off_cx.pt": {
+   "indice": 0.31160193402320147,
+   "rapporto_lunghezze": 0.7663515284657478
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q13_off_cx.pt": {
+   "indice": 0.23176597096025944,
+   "rapporto_lunghezze": 0.8203077487647533
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q14_off_cx.pt": {
+   "indice": 0.19124764632433652,
+   "rapporto_lunghezze": 0.8148821115493774
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q15_off_cx.pt": {
+   "indice": 0.18833773508667945,
+   "rapporto_lunghezze": 0.8257215589284896
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q16_off_cx.pt": {
+   "indice": 0.22332466654479505,
+   "rapporto_lunghezze": 0.8211121894419193
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q17_off_cx.pt": {
+   "indice": 0.29098631124943497,
+   "rapporto_lunghezze": 0.809097821265459
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q18_off_cx.pt": {
+   "indice": 0.11736434893682599,
+   "rapporto_lunghezze": 0.8645550906658173
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q19_off_cx.pt": {
+   "indice": 0.2375957127660513,
+   "rapporto_lunghezze": 0.8074324488639831
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q20_off_cx.pt": {
+   "indice": 0.19033298287540673,
+   "rapporto_lunghezze": 0.8310544028878212
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q21_off_cx.pt": {
+   "indice": 0.2503325751051307,
+   "rapporto_lunghezze": 0.8329958863556385
+  },
+  "ms1400_tau0.01_wd0.0001_h512_q22_off_cx.pt": {
+   "indice": 0.19565551374107598,
+   "rapporto_lunghezze": 0.835334499925375
+  },
+  "VECCHIO_max_sources_80": {
+   "indice": 0.08970558131113648,
+   "rapporto_lunghezze": 0.9202536419034004
+  }
+ },
+ "ablazione_reference": {
+  "+attributo": {
+   "n": 27,
+   "baseline": 21.20817959032032,
+   "ablato": 27.62659030768838,
+   "intero": 42.311439934365495,
+   "guadagno_ablato_pp": 6.418410717368062,
+   "guadagno_intero_pp": 21.103260344045175,
+   "quota_persa_pct": 69.58569143947855
+  },
+  "-attributo": {
+   "n": 27,
+   "baseline": 33.92261162268218,
+   "ablato": 36.295221357428595,
+   "intero": 48.29916221780287,
+   "guadagno_ablato_pp": 2.372609734746412,
+   "guadagno_intero_pp": 14.37655059512069,
+   "quota_persa_pct": 83.49666897460327
+  },
+  "TUTTE": {
+   "n": 101,
+   "baseline": 19.914085234168798,
+   "ablato": 28.747028235658178,
+   "intero": 41.248704459869515,
+   "guadagno_ablato_pp": 8.83294300148938,
+   "guadagno_intero_pp": 21.334619225700717,
+   "quota_persa_pct": 58.59807523141174
+  }
+ },
+ "intero_contro_ablato": {
+  "delta_pp": 12.50167622421133,
+  "lo": 10.740879358398402,
+  "hi": 14.380467829222345,
+  "p": 0.0
+ },
+ "indice_medio_membri": 0.23127473000592244
+}

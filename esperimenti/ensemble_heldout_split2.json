@@ -1,0 +1,103 @@
+{
+  "seed": 2026,
+  "split": 2,
+  "holdout": [
+    "Bangs",
+    "Big_Lips",
+    "Blond_Hair",
+    "Bushy_Eyebrows",
+    "Chubby",
+    "Eyeglasses",
+    "Smiling",
+    "Wearing_Hat",
+    "Wearing_Necktie",
+    "Young"
+  ],
+  "voci": {
+    "seed 2026 da solo": {
+      "visti": {
+        "delta_pp": 6.239460927563233,
+        "p": 0.0,
+        "modello": 29.20241173064736
+      },
+      "MAI VISTI": {
+        "delta_pp": -7.727423661323056,
+        "p": 0.0,
+        "modello": 15.768094798089136
+      },
+      "miste": {
+        "delta_pp": -0.9362065742246863,
+        "p": 0.6605,
+        "modello": 10.089160925848105
+      }
+    },
+    "seed 2027 da solo": {
+      "visti": {
+        "delta_pp": 6.418319161451061,
+        "p": 0.0,
+        "modello": 29.3812699645352
+      },
+      "MAI VISTI": {
+        "delta_pp": -7.472181311075982,
+        "p": 0.0,
+        "modello": 16.023337148336203
+      },
+      "miste": {
+        "delta_pp": -0.48386135309389183,
+        "p": 0.8251,
+        "modello": 10.541506146978898
+      }
+    },
+    "seed 2028 da solo": {
+      "visti": {
+        "delta_pp": 6.272811678767444,
+        "p": 0.0,
+        "modello": 29.23576248185157
+      },
+      "MAI VISTI": {
+        "delta_pp": -7.659969049521615,
+        "p": 0.0,
+        "modello": 15.835549409890573
+      },
+      "miste": {
+        "delta_pp": -0.7837372581096109,
+        "p": 0.722,
+        "modello": 10.241630241963179
+      }
+    },
+    "seed 2029 da solo": {
+      "visti": {
+        "delta_pp": 6.53610930652861,
+        "p": 0.0,
+        "modello": 29.499060109612746
+      },
+      "MAI VISTI": {
+        "delta_pp": -7.757137159432652,
+        "p": 0.0,
+        "modello": 15.73838129997954
+      },
+      "miste": {
+        "delta_pp": -0.7800711039958591,
+        "p": 0.7182,
+        "modello": 10.245296396076933
+      }
+    },
+    "ENSEMBLE dei 4": {
+      "visti": {
+        "delta_pp": 6.385927973489503,
+        "p": 0.0,
+        "modello": 29.348878776573635
+      },
+      "MAI VISTI": {
+        "delta_pp": -7.691304690744399,
+        "p": 0.0,
+        "modello": 15.804213768667791
+      },
+      "miste": {
+        "delta_pp": -0.47743457103717457,
+        "p": 0.8294,
+        "modello": 10.547932929035616
+      }
+    }
+  }
+}

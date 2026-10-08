@@ -1,0 +1,116 @@
+{
+  "seed": 2026,
+  "split": 0,
+  "holdout": [
+    "Bangs",
+    "Bushy_Eyebrows",
+    "Chubby",
+    "Goatee",
+    "Gray_Hair",
+    "Male",
+    "Mouth_Slightly_Open",
+    "Wearing_Earrings",
+    "Wearing_Necktie",
+    "Young"
+  ],
+  "copertura_base": 0.5053129196166992,
+  "regimi": {
+    "solo CelebA (base)": {
+      "visti": {
+        "delta_pp": 4.964285803189235,
+        "p": 0.0,
+        "modello": 28.188478314715564
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.878518187329888,
+        "p": 0.0,
+        "modello": 19.460162767621906
+      },
+      "miste": {
+        "delta_pp": 2.450658828432012,
+        "p": 0.1335,
+        "modello": 12.384496496681646
+      }
+    },
+    "STRETTO lam=0.1": {
+      "n_dir": 769,
+      "n_usabili": 385,
+      "copertura": 1.0000001192092896,
+      "visti": {
+        "delta_pp": 4.418796724128361,
+        "p": 0.0,
+        "modello": 27.642989235654692
+      },
+      "MAI VISTI": {
+        "delta_pp": -5.623156908388056,
+        "p": 0.0,
+        "modello": 18.715524046563733
+      },
+      "miste": {
+        "delta_pp": 0.10996444669186065,
+        "p": 0.9516,
+        "modello": 10.043802114941492
+      }
+    },
+    "STRETTO lam=0.25": {
+      "n_dir": 769,
+      "n_usabili": 385,
+      "copertura": 1.0000001192092896,
+      "visti": {
+        "delta_pp": 4.4346920290348955,
+        "p": 0.0,
+        "modello": 27.658884540561225
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.461588359621435,
+        "p": 0.0,
+        "modello": 19.87709259533036
+      },
+      "miste": {
+        "delta_pp": 0.13317202965636543,
+        "p": 0.9339,
+        "modello": 10.067009697905995
+      }
+    },
+    "STRETTO lam=1.0": {
+      "n_dir": 769,
+      "n_usabili": 385,
+      "copertura": 1.0000001192092896,
+      "visti": {
+        "delta_pp": 3.453437272186869,
+        "p": 0.0,
+        "modello": 26.67762978371319
+      },
+      "MAI VISTI": {
+        "delta_pp": -3.1999129383949505,
+        "p": 0.0007,
+        "modello": 21.138768016556845
+      },
+      "miste": {
+        "delta_pp": -0.501009918745089,
+        "p": 0.7593,
+        "modello": 9.432827749504542
+      }
+    },
+    "PERMISSIVO lam=0.25": {
+      "n_dir": 787,
+      "n_usabili": 394,
+      "copertura": 1.0000001192092896,
+      "visti": {
+        "delta_pp": 4.435369881001065,
+        "p": 0.0,
+        "modello": 27.65956239252739
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.215305296787022,
+        "p": 0.0,
+        "modello": 20.123375658164775
+      },
+      "miste": {
+        "delta_pp": 0.11899162462433788,
+        "p": 0.9245,
+        "modello": 10.05282929287397
+      }
+    }
+  }
+}

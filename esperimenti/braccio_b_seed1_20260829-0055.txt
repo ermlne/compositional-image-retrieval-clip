@@ -1,0 +1,160 @@
+========================================================================================================
+PIU' QUERY o PIU' ESEMPI? — tre bracci a parita' di budget
+========================================================================================================
+log  : braccio_b_seed1_20260829-0055.txt
+json : braccio_b_seed1_20260829-0055.json
+seed 1, tau 0.03, 30 epoche, 4 thread
+  0 attuale        targets {1: 80, 2: 80, 3: 60}  max_sources 80
+  A piu esempi     targets {1: 80, 2: 80, 3: 60}  max_sources 175
+  B piu query      targets {1: 80, 2: 320, 3: 240}  max_sources 80
+
+[     0s] carico gli embedding...
+[     2s] train (162770, 512), valid (19867, 512), dev 101 query
+[     2s] corpus di addestramento (20000, 512) (condiviso dai tre bracci)
+[     2s] costruisco le direzioni testuali (10 template)...
+[    22s] direzioni (40, 512)
+
+========================================================================================================
+COSTRUZIONE DEI TRE INSIEMI DI ADDESTRAMENTO
+========================================================================================================
+  0 attuale         220 campionate ->  182 valide,   4433 esempi  |  composizione 43/36/20%  (31s)
+  A piu esempi      220 campionate ->  189 valide,   9529 esempi  |  composizione 42/37/21%  (84s)
+  B piu query       640 campionate ->  481 valide,   9079 esempi  |  composizione 16/54/30%  (89s)
+
+  budget di esempi A vs B: 9529 vs 9079  (rapporto 1.05x)
+  composizione del set di sviluppo, per confronto: 53/32/15%
+
+========================================================================================================
+ADDESTRAMENTO
+========================================================================================================
+baseline sul set di sviluppo: 19.91%  OK
+
+--- 0 attuale: 4433 esempi, 18 batch per epoca, 30 epoche ---
+  epoca   1/30  loss  5.650  caso  6.843  divario  1.193  gamma  1.004  R@10 fit 15.43%  [   251s]
+  epoca   2/30  loss  5.344  caso  6.844  divario  1.501  gamma  1.009  R@10 fit 19.89%  [   264s]
+  epoca   3/30  loss  5.112  caso  6.852  divario  1.740  gamma  1.015  R@10 fit 24.28%  [   278s]
+  epoca   4/30  loss  4.906  caso  6.838  divario  1.933  gamma  1.022  R@10 fit 29.02%  [   290s]
+  epoca   5/30  loss  4.737  caso  6.851  divario  2.114  gamma  1.029  R@10 fit 33.05%  [   304s]
+  epoca   6/30  loss  4.583  caso  6.847  divario  2.264  gamma  1.035  R@10 fit 37.16%  [   320s]
+  epoca   7/30  loss  4.456  caso  6.845  divario  2.389  gamma  1.042  R@10 fit 41.83%  [   337s]
+  epoca   8/30  loss  4.323  caso  6.833  divario  2.510  gamma  1.048  R@10 fit 43.56%  [   350s]
+  epoca   9/30  loss  4.237  caso  6.840  divario  2.602  gamma  1.053  R@10 fit 45.09%  [   365s]
+  epoca  10/30  loss  4.155  caso  6.836  divario  2.682  gamma  1.058  R@10 fit 48.61%  [   379s]
+  epoca  11/30  loss  4.095  caso  6.847  divario  2.751  gamma  1.063  R@10 fit 51.32%  [   391s]
+  epoca  12/30  loss  4.039  caso  6.848  divario  2.809  gamma  1.067  R@10 fit 52.60%  [   405s]
+  epoca  13/30  loss  3.986  caso  6.850  divario  2.863  gamma  1.072  R@10 fit 53.90%  [   416s]
+  epoca  14/30  loss  3.936  caso  6.844  divario  2.908  gamma  1.076  R@10 fit 56.40%  [   427s]
+  epoca  15/30  loss  3.899  caso  6.843  divario  2.944  gamma  1.079  R@10 fit 56.84%  [   439s]
+  epoca  16/30  loss  3.862  caso  6.840  divario  2.978  gamma  1.084  R@10 fit 57.94%  [   450s]
+  epoca  17/30  loss  3.826  caso  6.849  divario  3.022  gamma  1.087  R@10 fit 60.06%  [   462s]
+  epoca  18/30  loss  3.776  caso  6.835  divario  3.059  gamma  1.091  R@10 fit 59.94%  [   473s]
+  epoca  19/30  loss  3.767  caso  6.845  divario  3.078  gamma  1.096  R@10 fit 61.12%  [   485s]
+  epoca  20/30  loss  3.732  caso  6.845  divario  3.113  gamma  1.099  R@10 fit 62.59%  [   496s]
+  epoca  21/30  loss  3.698  caso  6.847  divario  3.149  gamma  1.103  R@10 fit 63.96%  [   508s]
+  epoca  22/30  loss  3.671  caso  6.844  divario  3.174  gamma  1.107  R@10 fit 63.64%  [   519s]
+  epoca  23/30  loss  3.651  caso  6.844  divario  3.193  gamma  1.111  R@10 fit 65.54%  [   530s]
+  epoca  24/30  loss  3.627  caso  6.848  divario  3.221  gamma  1.115  R@10 fit 65.56%  [   542s]
+  epoca  25/30  loss  3.590  caso  6.848  divario  3.258  gamma  1.119  R@10 fit 67.24%  [   553s]
+  epoca  26/30  loss  3.568  caso  6.841  divario  3.273  gamma  1.123  R@10 fit 66.94%  [   568s]
+  epoca  27/30  loss  3.546  caso  6.845  divario  3.299  gamma  1.126  R@10 fit 66.88%  [   580s]
+  epoca  28/30  loss  3.514  caso  6.836  divario  3.322  gamma  1.130  R@10 fit 68.11%  [   592s]
+  epoca  29/30  loss  3.495  caso  6.847  divario  3.352  gamma  1.134  R@10 fit 69.57%  [   605s]
+  epoca  30/30  loss  3.463  caso  6.847  divario  3.384  gamma  1.138  R@10 fit 69.00%  [   618s]
+  -> 0 attuale: R@10 sul set di sviluppo = 26.53%  (+6.62pp sulla baseline)  [   633s]
+
+--- A piu esempi: 9529 esempi, 38 batch per epoca, 30 epoche ---
+  epoca   1/30  loss  5.484  caso  6.836  divario  1.352  gamma  1.009  R@10 fit 15.94%  [   656s]
+  epoca   2/30  loss  5.025  caso  6.837  divario  1.812  gamma  1.022  R@10 fit 23.96%  [   679s]
+  epoca   3/30  loss  4.706  caso  6.840  divario  2.133  gamma  1.036  R@10 fit 32.02%  [   703s]
+  epoca   4/30  loss  4.485  caso  6.844  divario  2.359  gamma  1.048  R@10 fit 36.42%  [   726s]
+  epoca   5/30  loss  4.331  caso  6.840  divario  2.510  gamma  1.059  R@10 fit 41.21%  [   748s]
+  epoca   6/30  loss  4.225  caso  6.843  divario  2.617  gamma  1.068  R@10 fit 43.63%  [   770s]
+  epoca   7/30  loss  4.139  caso  6.837  divario  2.697  gamma  1.077  R@10 fit 45.41%  [   797s]
+  epoca   8/30  loss  4.077  caso  6.841  divario  2.764  gamma  1.084  R@10 fit 47.79%  [   821s]
+  epoca   9/30  loss  4.019  caso  6.836  divario  2.817  gamma  1.092  R@10 fit 49.37%  [   838s]
+  epoca  10/30  loss  3.975  caso  6.833  divario  2.858  gamma  1.099  R@10 fit 50.35%  [   852s]
+  epoca  11/30  loss  3.938  caso  6.842  divario  2.903  gamma  1.106  R@10 fit 51.85%  [   864s]
+  epoca  12/30  loss  3.896  caso  6.836  divario  2.939  gamma  1.113  R@10 fit 54.45%  [   879s]
+  epoca  13/30  loss  3.863  caso  6.839  divario  2.976  gamma  1.120  R@10 fit 55.31%  [   896s]
+  epoca  14/30  loss  3.838  caso  6.833  divario  2.995  gamma  1.126  R@10 fit 56.43%  [   907s]
+  epoca  15/30  loss  3.807  caso  6.834  divario  3.027  gamma  1.133  R@10 fit 57.50%  [   919s]
+  epoca  16/30  loss  3.785  caso  6.840  divario  3.056  gamma  1.140  R@10 fit 59.07%  [   932s]
+  epoca  17/30  loss  3.758  caso  6.836  divario  3.079  gamma  1.146  R@10 fit 59.40%  [   944s]
+  epoca  18/30  loss  3.742  caso  6.839  divario  3.098  gamma  1.152  R@10 fit 59.65%  [   956s]
+  epoca  19/30  loss  3.710  caso  6.837  divario  3.127  gamma  1.158  R@10 fit 60.51%  [   969s]
+  epoca  20/30  loss  3.697  caso  6.843  divario  3.145  gamma  1.165  R@10 fit 60.85%  [   981s]
+  epoca  21/30  loss  3.674  caso  6.838  divario  3.164  gamma  1.171  R@10 fit 63.09%  [   992s]
+  epoca  22/30  loss  3.645  caso  6.839  divario  3.194  gamma  1.177  R@10 fit 64.65%  [  1004s]
+  epoca  23/30  loss  3.630  caso  6.843  divario  3.213  gamma  1.183  R@10 fit 64.48%  [  1015s]
+  epoca  24/30  loss  3.612  caso  6.840  divario  3.227  gamma  1.189  R@10 fit 63.32%  [  1026s]
+  epoca  25/30  loss  3.599  caso  6.845  divario  3.246  gamma  1.195  R@10 fit 64.68%  [  1037s]
+  epoca  26/30  loss  3.573  caso  6.841  divario  3.268  gamma  1.202  R@10 fit 64.29%  [  1047s]
+  epoca  27/30  loss  3.555  caso  6.836  divario  3.282  gamma  1.208  R@10 fit 65.15%  [  1058s]
+  epoca  28/30  loss  3.537  caso  6.843  divario  3.306  gamma  1.214  R@10 fit 64.57%  [  1069s]
+  epoca  29/30  loss  3.520  caso  6.833  divario  3.313  gamma  1.220  R@10 fit 66.56%  [  1080s]
+  epoca  30/30  loss  3.503  caso  6.841  divario  3.338  gamma  1.226  R@10 fit 67.09%  [  1091s]
+  -> A piu esempi: R@10 sul set di sviluppo = 30.22%  (+10.31pp sulla baseline)  [  1098s]
+
+--- B piu query: 9079 esempi, 36 batch per epoca, 30 epoche ---
+  epoca   1/30  loss  5.792  caso  6.981  divario  1.189  gamma  1.009  R@10 fit 13.52%  [  1110s]
+  epoca   2/30  loss  5.270  caso  6.979  divario  1.709  gamma  1.022  R@10 fit 19.00%  [  1121s]
+  epoca   3/30  loss  4.925  caso  6.984  divario  2.059  gamma  1.035  R@10 fit 26.87%  [  1132s]
+  epoca   4/30  loss  4.674  caso  6.982  divario  2.308  gamma  1.047  R@10 fit 32.46%  [  1143s]
+  epoca   5/30  loss  4.505  caso  6.980  divario  2.476  gamma  1.057  R@10 fit 38.27%  [  1155s]
+  epoca   6/30  loss  4.395  caso  6.981  divario  2.586  gamma  1.066  R@10 fit 40.80%  [  1167s]
+  epoca   7/30  loss  4.310  caso  6.983  divario  2.673  gamma  1.074  R@10 fit 43.30%  [  1178s]
+  epoca   8/30  loss  4.237  caso  6.981  divario  2.744  gamma  1.081  R@10 fit 46.82%  [  1189s]
+  epoca   9/30  loss  4.182  caso  6.980  divario  2.798  gamma  1.088  R@10 fit 48.04%  [  1199s]
+  epoca  10/30  loss  4.138  caso  6.985  divario  2.847  gamma  1.095  R@10 fit 49.43%  [  1210s]
+  epoca  11/30  loss  4.093  caso  6.981  divario  2.888  gamma  1.102  R@10 fit 49.54%  [  1221s]
+  epoca  12/30  loss  4.053  caso  6.982  divario  2.929  gamma  1.108  R@10 fit 52.43%  [  1232s]
+  epoca  13/30  loss  4.018  caso  6.984  divario  2.966  gamma  1.114  R@10 fit 52.20%  [  1243s]
+  epoca  14/30  loss  3.985  caso  6.982  divario  2.996  gamma  1.120  R@10 fit 53.26%  [  1254s]
+  epoca  15/30  loss  3.952  caso  6.984  divario  3.031  gamma  1.127  R@10 fit 54.31%  [  1264s]
+  epoca  16/30  loss  3.928  caso  6.983  divario  3.055  gamma  1.133  R@10 fit 55.65%  [  1275s]
+  epoca  17/30  loss  3.897  caso  6.983  divario  3.086  gamma  1.139  R@10 fit 56.00%  [  1287s]
+  epoca  18/30  loss  3.869  caso  6.984  divario  3.115  gamma  1.145  R@10 fit 56.19%  [  1298s]
+  epoca  19/30  loss  3.849  caso  6.984  divario  3.135  gamma  1.151  R@10 fit 56.90%  [  1309s]
+  epoca  20/30  loss  3.820  caso  6.980  divario  3.160  gamma  1.157  R@10 fit 57.60%  [  1320s]
+  epoca  21/30  loss  3.797  caso  6.984  divario  3.186  gamma  1.163  R@10 fit 58.12%  [  1332s]
+  epoca  22/30  loss  3.781  caso  6.981  divario  3.200  gamma  1.169  R@10 fit 57.83%  [  1343s]
+  epoca  23/30  loss  3.756  caso  6.982  divario  3.226  gamma  1.175  R@10 fit 60.67%  [  1354s]
+  epoca  24/30  loss  3.736  caso  6.982  divario  3.245  gamma  1.181  R@10 fit 60.51%  [  1365s]
+  epoca  25/30  loss  3.710  caso  6.983  divario  3.273  gamma  1.187  R@10 fit 62.24%  [  1375s]
+  epoca  26/30  loss  3.693  caso  6.983  divario  3.290  gamma  1.193  R@10 fit 62.64%  [  1386s]
+  epoca  27/30  loss  3.673  caso  6.983  divario  3.310  gamma  1.199  R@10 fit 64.07%  [  1397s]
+  epoca  28/30  loss  3.657  caso  6.981  divario  3.324  gamma  1.205  R@10 fit 62.56%  [  1408s]
+  epoca  29/30  loss  3.635  caso  6.985  divario  3.350  gamma  1.211  R@10 fit 64.52%  [  1419s]
+  epoca  30/30  loss  3.611  caso  6.982  divario  3.371  gamma  1.217  R@10 fit 64.65%  [  1432s]
+  -> B piu query: R@10 sul set di sviluppo = 29.79%  (+9.87pp sulla baseline)  [  1440s]
+
+========================================================================================================
+RISULTATI
+========================================================================================================
+braccio           query  esempi     R@10  vs baseline   1 cond.   2 cond.   3 cond.
+0 attuale           182    4433   26.53%       +6.62pp    +5.18pp    +8.06pp    +8.71pp
+A piu esempi        189    9529   30.22%      +10.31pp    +7.81pp   +12.93pp   +13.71pp
+B piu query         481    9079   29.79%       +9.87pp    +8.53pp   +12.17pp    +9.81pp
+
+========================================================================================================
+CONFRONTI ACCOPPIATI (bootstrap gerarchico, Bonferroni su 3: soglia 0.0167)
+========================================================================================================
+  PRIMARIA   B piu query vs 0 attuale       +3.26pp  [+1.68, +4.86]  p = 0.0000  (66 vinte / 32 perse)
+  MECCANISMO B piu query vs A piu esempi    -0.43pp  [-1.73, +0.87]  p = 0.4816  (44 vinte / 48 perse)
+  CONTROLLO  A piu esempi vs 0 attuale      +3.69pp  [+2.40, +5.11]  p = 0.0000  (76 vinte / 21 perse)
+
+========================================================================================================
+LETTURA
+========================================================================================================
+  piu' query   : +3.26pp (p=0.0000)
+  piu' esempi  : +3.69pp (p=0.0000)
+  differenza   : -0.43pp (p=0.4816)
+
+  Conta la MASSA DI ESEMPI, non quali query siano. Si compra molto piu' a buon
+  mercato alzando max_sources, senza campionare query nuove.
+
+  Ricorda il confondimento dichiarato: il braccio B e' anche piu' spostato verso le
+  query composte, perche' quelle a 1 condizione sono esaurite. La colonna per strati
+  serve a questo.
+
+[  1441s] salvato: braccio_b_seed1_20260829-0055.txt e braccio_b_seed1_20260829-0055.json

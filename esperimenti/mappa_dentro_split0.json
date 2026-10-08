@@ -1,0 +1,69 @@
+{
+  "seed": 2026,
+  "split": 0,
+  "holdout": [
+    "Bangs",
+    "Bushy_Eyebrows",
+    "Chubby",
+    "Goatee",
+    "Gray_Hair",
+    "Male",
+    "Mouth_Slightly_Open",
+    "Wearing_Earrings",
+    "Wearing_Necktie",
+    "Young"
+  ],
+  "varianti": {
+    "base": {
+      "visti": {
+        "delta_pp": 4.964285803189235,
+        "p": 0.0,
+        "modello": 28.188478314715564
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.878518187329888,
+        "p": 0.0,
+        "modello": 19.460162767621906
+      },
+      "miste": {
+        "delta_pp": 2.450658828432012,
+        "p": 0.1335,
+        "modello": 12.384496496681646
+      }
+    },
+    "piu_mappa": {
+      "visti": {
+        "delta_pp": 4.721727820159659,
+        "p": 0.0,
+        "modello": 27.945920331685986
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.620203002173795,
+        "p": 0.0001,
+        "modello": 19.718477952777995
+      },
+      "miste": {
+        "delta_pp": 1.6090117051129553,
+        "p": 0.3427,
+        "modello": 11.542849373362587
+      }
+    },
+    "solo_mappa": {
+      "visti": {
+        "delta_pp": 0.7557182086780165,
+        "p": 0.5359,
+        "modello": 23.979910720204348
+      },
+      "MAI VISTI": {
+        "delta_pp": -5.852928814972247,
+        "p": 0.0,
+        "modello": 18.485752139979546
+      },
+      "miste": {
+        "delta_pp": -1.7964670326421068,
+        "p": 0.2536,
+        "modello": 8.137370635607526
+      }
+    }
+  }
+}

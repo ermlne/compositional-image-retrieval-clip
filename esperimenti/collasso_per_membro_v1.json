@@ -1,0 +1,79 @@
+{
+ "prodotto_da": "esperimenti/collasso_per_membro.py",
+ "tag": "v1",
+ "cache": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/drive/cache/dati_pool.pt",
+ "ckpt_dir": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/ckpt_v1_6",
+ "ridge": 0.001,
+ "n_fit": 18397,
+ "membri": {
+  "ms1400_tau0.01_wd0.0001_q11_off.pt": {
+   "r2": 0.9353878498077393,
+   "mlp_r10": 33.94288867715411,
+   "lineare_r10": 31.175269558878245,
+   "divario_pp": 2.7676191182758636,
+   "divario_positive_pp": 1.2595288384282028,
+   "divario_negative_pp": 5.535131179478846,
+   "asimmetria_pp": 4.275602341050643
+  },
+  "ms1400_tau0.01_wd0.0001_q12_off.pt": {
+   "r2": 0.9391788244247437,
+   "mlp_r10": 33.85335544029252,
+   "lineare_r10": 32.07151585640007,
+   "divario_pp": 1.7818395838924488,
+   "divario_positive_pp": 0.20683855948782792,
+   "divario_negative_pp": 3.69162302297876,
+   "asimmetria_pp": 3.484784463490932
+  },
+  "ms1400_tau0.01_wd0.0001_q13_off.pt": {
+   "r2": 0.9551104307174683,
+   "mlp_r10": 34.20876633293912,
+   "lineare_r10": 32.219749334871,
+   "divario_pp": 1.9890169980681236,
+   "divario_positive_pp": 0.9049823813473878,
+   "divario_negative_pp": 2.8919959179834294,
+   "asimmetria_pp": 1.9870135366360415
+  },
+  "ms1400_tau0.01_wd0.0001_q14_off.pt": {
+   "r2": 0.9352660179138184,
+   "mlp_r10": 32.66963550945901,
+   "lineare_r10": 31.143394579879462,
+   "divario_pp": 1.5262409295795507,
+   "divario_positive_pp": 0.1024644181480312,
+   "divario_negative_pp": 3.0585641953343057,
+   "asimmetria_pp": 2.9560997771862745
+  },
+  "ms1400_tau0.01_wd0.0001_q15_off.pt": {
+   "r2": 0.9021581411361694,
+   "mlp_r10": 33.54904689616282,
+   "lineare_r10": 31.351443588554794,
+   "divario_pp": 2.197603307608027,
+   "divario_positive_pp": 1.5800114607691071,
+   "divario_negative_pp": 4.153966746173303,
+   "asimmetria_pp": 2.573955285404196
+  },
+  "ms1400_tau0.01_wd0.0001_q16_off.pt": {
+   "r2": 0.9355379939079285,
+   "mlp_r10": 33.8222683989436,
+   "lineare_r10": 31.520172330232306,
+   "divario_pp": 2.3020960687112932,
+   "divario_positive_pp": 1.9103457015432284,
+   "divario_negative_pp": 3.411408921078703,
+   "asimmetria_pp": 1.5010632195354745
+  }
+ },
+ "ensemble": {
+  "r2": 0.9440629482269287,
+  "mlp_r10": 36.729900289913346,
+  "lineare_r10": 34.60187720754999,
+  "divario_pp": 2.128023082363356,
+  "divario_positive_pp": 1.443483610122378,
+  "divario_negative_pp": 4.133638997920464,
+  "asimmetria_pp": 2.690155387798086
+ },
+ "riassunto": {
+  "n_membri": 6,
+  "membri_con_divario_maggiore_sui_negativi": 6,
+  "asimmetria_media_pp": 2.7964197705505938,
+  "asimmetria_sd_pp": 1.0069659601780119
+ }
+}

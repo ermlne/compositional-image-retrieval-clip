@@ -1,0 +1,63 @@
+{
+  "seed": 1,
+  "ridge": 0.001,
+  "r2": {
+    "P1_train": 0.9921683669090271,
+    "P2_dev": 0.9958781599998474,
+    "P3_meta_dev": 0.9567208886146545
+  },
+  "dev_r10": {
+    "baseline": 19.914085234168798,
+    "MLP": 26.53131539014267,
+    "P1 lineare (fit train)": 26.085393169142236,
+    "P2 lineare (fit dev)": 26.26332407786261,
+    "P3 lineare (fit meta dev)": 26.04013874404808
+  },
+  "vs_MLP": {
+    "baseline": {
+      "delta_pp": -6.61723015597387,
+      "p": 0.0
+    },
+    "P1 lineare (fit train)": {
+      "delta_pp": -0.4459222210004339,
+      "p": 0.0074
+    },
+    "P2 lineare (fit dev)": {
+      "delta_pp": -0.26799131228005646,
+      "p": 0.1006
+    },
+    "P3 lineare (fit meta dev)": {
+      "delta_pp": -0.4911766460945868,
+      "p": 0.0139
+    }
+  },
+  "meta_dev": {
+    "P1 lineare (fit train)": {
+      "vs_MLP_pp": -0.3175641537264385,
+      "vs_MLP_p": 0.1479,
+      "vs_baseline_pp": 4.501998905350452,
+      "vs_baseline_p": 0.0004
+    },
+    "P2 lineare (fit dev)": {
+      "vs_MLP_pp": -0.18782813932806805,
+      "vs_MLP_p": 0.3298,
+      "vs_baseline_pp": 4.631734919748821,
+      "vs_baseline_p": 0.0001
+    },
+    "P3 lineare (fit meta dev)": {
+      "vs_MLP_pp": -0.576721627947031,
+      "vs_MLP_p": 0.082,
+      "vs_baseline_pp": 4.242841431129859,
+      "vs_baseline_p": 0.0009
+    },
+    "MLP": {
+      "vs_baseline_pp": 4.81956305907689,
+      "vs_baseline_p": 0.0
+    }
+  },
+  "lambda_sens": {
+    "0.0001": 26.092818911716492,
+    "0.01": 26.108831720660074,
+    "0.1": 26.08969820769575
+  }
+}

@@ -1,0 +1,64 @@
+====================================================================================================
+QUANTE QUERY IN PIU' — resa e costo per numero di condizioni
+====================================================================================================
+log: quante_query_in_piu_20260829-0034.txt   json: quante_query_in_piu_20260829-0034.json
+corpus di addestramento 20000, max_sources 80, 120 query provate per livello (seed 2026)
+corpus: (20000, 40)
+
+====================================================================================================
+SOPRAVVIVENZA E RESA
+====================================================================================================
+ cond.   spazio totale  provate  valide    resa   esempi  es./provata  ref/query    sec
+     1              80       80      80  100.0%     2740         34.2       34.2     31
+     2           3,120      120     100   83.3%     1876         15.6       18.8     19
+     3          79,040      120      63   52.5%      653          5.4       10.4      9
+     4       1,462,240      120      27   22.5%      184          1.5        6.8      5
+     5      21,056,256      120      16   13.3%       64          0.5        4.0      3
+
+  resa      = frazione delle query campionate che produce almeno una reference con
+              >= 5 target validi (la regola dell'assignment applicata al train)
+  ref/query = quante coppie (reference, target) porta una query valida
+
+====================================================================================================
+COSA COSTA PORTARE L'ADDESTRAMENTO A PIU' QUERY
+====================================================================================================
+Configurazione attuale di multiseed.py: {1: 80, 2: 80, 3: 60} -> 182 query valide,
+4407 esempi, 2,6 minuti per seed su CPU.
+
+configurazione                              query valide    esempi  x attuale  min/seed
+attuale  {1:80, 2:80, 3:60}                          178      4317       1.0x       2.6
+2x sulle composte  {1:80, 2:160, 3:120}              276      5894       1.4x       3.5
+4x sulle composte  {1:80, 2:320, 3:240}              473      9049       2.1x       5.4
+4x + quattro condizioni                              527      9417       2.2x       5.7
+8x sulle composte  {1:80, 2:640, 3:480}              865     15357       3.6x       9.2
+
+  I minuti sono una stima lineare negli esempi: il costo per epoca e' dominato dal
+  denominatore InfoNCE su tutto il corpus, che scala con il numero di esempi.
+
+====================================================================================================
+QUANTE DIREZIONI c DISTINTE SI GUADAGNANO
+====================================================================================================
+E' la quantita' che conta: `c` vive nello span delle 40 direzioni (rango effettivo
+~20 su 512), quindi piu' query non allargano lo spazio — aggiungono punti dentro.
+
+configurazione                              direzioni c distinte   x attuale
+attuale  {1:80, 2:80, 3:60}                                  220        1.0x
+2x sulle composte  {1:80, 2:160, 3:120}                      360        1.6x
+4x sulle composte  {1:80, 2:320, 3:240}                      640        2.9x
+4x + quattro condizioni                                      880        4.0x
+8x sulle composte  {1:80, 2:640, 3:480}                     1200        5.5x
+
+  Nota: le query a 1 condizione sono gia' esaurite (80 su 80), quindi tutto il
+  guadagno viene dalle composte — che e' anche dove il contributo gia' rende di piu'
+  (+8,69pp contro +5,43pp) e dove il bagging puo' avere diversita' da sfruttare.
+
+====================================================================================================
+VERDETTO
+====================================================================================================
+  Le query a 4 condizioni rendono poco: resa 22%, 1.5 esempi per query campionata contro 5.4 a 3 condizioni.
+  Conviene spendere il budget su piu' query a 2 e 3 condizioni.
+
+  Le query a 1 condizione sono esaurite: 80 su 80 gia' usate. Aumentarne il numero
+  non fa nulla — e spiega perche' il bagging non puo' avere diversita' li'.
+
+Salvato: quante_query_in_piu_20260829-0034.txt e quante_query_in_piu_20260829-0034.json

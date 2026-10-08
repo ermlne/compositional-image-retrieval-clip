@@ -1,0 +1,70 @@
+{
+  "seed": 2026,
+  "split": 2,
+  "n_holdout": 10,
+  "holdout": [
+    "Bangs",
+    "Big_Lips",
+    "Blond_Hair",
+    "Bushy_Eyebrows",
+    "Chubby",
+    "Eyeglasses",
+    "Smiling",
+    "Wearing_Hat",
+    "Wearing_Necktie",
+    "Young"
+  ],
+  "procruste": {
+    "scala=0.5": {
+      "visti": {
+        "delta_pp": -0.22451915755070012,
+        "p": 0.756,
+        "metodo": 22.738431645533428
+      },
+      "MAI VISTI": {
+        "delta_pp": -7.269088498178482,
+        "p": 0.0,
+        "metodo": 16.22642996123371
+      },
+      "miste": {
+        "delta_pp": -3.087158719783179,
+        "p": 0.0337,
+        "metodo": 7.938208780289611
+      }
+    },
+    "scala=1.0": {
+      "visti": {
+        "delta_pp": -7.752384742659631,
+        "p": 0.0,
+        "metodo": 15.210566060424496
+      },
+      "MAI VISTI": {
+        "delta_pp": -10.229305017038094,
+        "p": 0.0,
+        "metodo": 13.266213442374097
+      },
+      "miste": {
+        "delta_pp": -1.7362699557755976,
+        "p": 0.3592,
+        "metodo": 9.289097544297194
+      }
+    },
+    "scala=1.5": {
+      "visti": {
+        "delta_pp": -12.990217778884894,
+        "p": 0.0,
+        "metodo": 9.972733024199233
+      },
+      "MAI VISTI": {
+        "delta_pp": -14.636762765814376,
+        "p": 0.0,
+        "metodo": 8.85875569359781
+      },
+      "miste": {
+        "delta_pp": -1.2793875010485063,
+        "p": 0.5773,
+        "metodo": 9.745979999024284
+      }
+    }
+  }
+}

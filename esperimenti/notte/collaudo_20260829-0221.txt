@@ -1,0 +1,32 @@
+================================================================================================================
+PIANO NOTTURNO — curva su max_sources, repliche, bagging
+================================================================================================================
+avvio      : 2026-08-29 02:21
+scadenza   : 2026-08-29 02:45 (0.4 ore)
+log        : notte_20260829-0221.txt
+json       : notte_20260829-0221.json
+checkpoint : C:\Users\Filor\Desktop\DL-Project-2026\esperimenti\notte\checkpoints
+veglia (standby impedito senza toccare le impostazioni): ATTIVA
+1 epoche fisse, nessuna selezione dell'epoca, 8 thread
+livelli: [80, 175]   seed repliche: [9]
+
+[   0.0m] carico gli embedding...
+[   0.0m] train (162770, 512), valid (19867, 512), dev 101 query
+[   0.0m] costruisco le direzioni testuali...
+[   0.2m] direzioni (40, 512)
+[   0.3m] baseline sul set di sviluppo: 19.91%  OK
+
+================================================================================================================
+FASE 1 — LA CURVA SU max_sources
+================================================================================================================
+
+--- max_sources 80: seed 5, max_sources 80, 171 query, 4422 esempi, 18 batch/epoca, 1 epoche, 18 passi ---
+  epoca    1/1  loss  5.644  caso  6.857  divario  1.214  gamma  1.005  |  val  6.16%  dev 15.42%  [   1.0m]
+  -> max_sources 80: dev 15.42% (-4.49pp)  val 6.16%  salvato curva_ms80_seed5.pt  [   1.1m]
+
+--- max_sources 175: seed 5, max_sources 175, 176 query, 9388 esempi, 37 batch/epoca, 1 epoche, 37 passi ---
+  epoca    1/1  loss  5.500  caso  6.820  divario  1.321  gamma  1.010  |  val  9.89%  dev 17.40%  [   2.4m]
+  -> max_sources 175: dev 17.40% (-2.52pp)  val 9.89%  salvato curva_ms175_seed5.pt  [   2.5m]
+
+--- controllo passi (ms 80, 2 epoche): seed 5, max_sources 80, 171 query, 4422 esempi, 18 batch/epoca, 2 epoche, 36 passi ---
+  epoca    1/2  loss  5.644  caso  6.857  divario  1.214  gamma  1.005  [   3.4m]

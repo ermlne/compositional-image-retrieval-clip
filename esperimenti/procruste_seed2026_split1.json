@@ -1,0 +1,70 @@
+{
+  "seed": 2026,
+  "split": 1,
+  "n_holdout": 10,
+  "holdout": [
+    "Big_Lips",
+    "Big_Nose",
+    "Black_Hair",
+    "Bushy_Eyebrows",
+    "Heavy_Makeup",
+    "Male",
+    "Pale_Skin",
+    "Smiling",
+    "Wearing_Earrings",
+    "Wearing_Hat"
+  ],
+  "procruste": {
+    "scala=0.5": {
+      "visti": {
+        "delta_pp": -0.09030301689300543,
+        "p": 0.9161,
+        "metodo": 24.464840201622078
+      },
+      "MAI VISTI": {
+        "delta_pp": -4.564738404685268,
+        "p": 0.0014,
+        "metodo": 16.341708102537584
+      },
+      "miste": {
+        "delta_pp": -3.1921057069100436,
+        "p": 0.0355,
+        "metodo": 7.749532677749276
+      }
+    },
+    "scala=1.0": {
+      "visti": {
+        "delta_pp": -7.387287607691569,
+        "p": 0.0,
+        "metodo": 17.167855610823516
+      },
+      "MAI VISTI": {
+        "delta_pp": -6.987874651591157,
+        "p": 0.0,
+        "metodo": 13.918571855631697
+      },
+      "miste": {
+        "delta_pp": -3.363351482319848,
+        "p": 0.1084,
+        "metodo": 7.578286902339472
+      }
+    },
+    "scala=1.5": {
+      "visti": {
+        "delta_pp": -13.001164930711473,
+        "p": 0.0,
+        "metodo": 11.55397828780361
+      },
+      "MAI VISTI": {
+        "delta_pp": -10.972185945366263,
+        "p": 0.0,
+        "metodo": 9.934260561856588
+      },
+      "miste": {
+        "delta_pp": -4.060085613459539,
+        "p": 0.0787,
+        "metodo": 6.881552771199781
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "data": "2026-08-29T02:21:43",
+  "epoche": 1,
+  "tau": 0.03,
+  "seed_curva": 5,
+  "veglia_attiva": true,
+  "fase1_curva": {
+    "max_sources 80": {
+      "nome": "max_sources 80",
+      "seed": 5,
+      "max_sources": 80,
+      "epoche": 1,
+      "n_query": 171,
+      "n_esempi": 4422,
+      "n_passi": 18,
+      "dev_r10": 15.42305039391183,
+      "vs_baseline": -4.491034840256969,
+      "val_r10": 6.158269823012326,
+      "strati_vs_baseline": [
+        -3.673340445026291,
+        -5.430982788441888,
+        -5.429512373626245
+      ],
+      "tetto_ottimistico_dev": 15.42305039391183,
+      "checkpoint": "curva_ms80_seed5.pt",
+      "storia": [
+        {
+          "epoca": 1,
+          "loss": 5.64394638273451,
+          "caso": 6.857468098476769,
+          "gamma": 1.004573106765747,
+          "r10_val": 6.158269823012326,
+          "r10_dev": 15.42305039391183
+        }
+      ]
+    },
+    "max_sources 175": {
+      "nome": "max_sources 175",
+      "seed": 5,
+      "max_sources": 175,
+      "epoche": 1,
+      "n_query": 176,
+      "n_esempi": 9388,
+      "n_passi": 37,
+      "dev_r10": 17.396846685759908,
+      "vs_baseline": -2.5172385484088906,
+      "val_r10": 9.894551401237564,
+      "strati_vs_baseline": [
+        -1.6552346818517414,
+        -3.964198449444721,
+        -2.5336046791381683
+      ],
+      "tetto_ottimistico_dev": 17.396846685759908,
+      "checkpoint": "curva_ms175_seed5.pt",
+      "storia": [
+        {
+          "epoca": 1,
+          "loss": 5.499696228955243,
+          "caso": 6.820475020217001,
+          "gamma": 1.0097298622131348,
+          "r10_val": 9.894551401237564,
+          "r10_dev": 17.396846685759908
+        }
+      ]
+    }
+  },
+  "fase2_repliche": {},
+  "fase3_bagging": {},
+  "baseline_dev_r10": 19.914085234168798
+}

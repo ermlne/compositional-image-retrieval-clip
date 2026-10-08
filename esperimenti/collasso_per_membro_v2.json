@@ -1,0 +1,79 @@
+{
+ "prodotto_da": "esperimenti/collasso_per_membro.py",
+ "tag": "v2",
+ "cache": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/cache_v2/dati_pool.pt",
+ "ckpt_dir": "/tmp/claude-1000/-home-ari-Documents-DLproject-DL-Project-2026/43039f35-f840-4b3f-bc1b-b1a3822774d1/scratchpad/ckpt_v2_6",
+ "ridge": 0.001,
+ "n_fit": 18397,
+ "membri": {
+  "ms2800_tau0.003_wd0.05_h512_q11_off_cx.pt": {
+   "r2": 0.9214742183685303,
+   "mlp_r10": 31.546241508626586,
+   "lineare_r10": 27.45200236722663,
+   "divario_pp": 4.094239141399957,
+   "divario_positive_pp": 1.8496287602275316,
+   "divario_negative_pp": 5.9905318441866555,
+   "asimmetria_pp": 4.140903083959124
+  },
+  "ms2800_tau0.003_wd0.05_h512_q12_off_cx.pt": {
+   "r2": 0.9259249567985535,
+   "mlp_r10": 32.13325698105683,
+   "lineare_r10": 29.571237578620362,
+   "divario_pp": 2.5620194024364693,
+   "divario_positive_pp": 1.9721733336686995,
+   "divario_negative_pp": 4.477329936923631,
+   "asimmetria_pp": 2.5051566032549317
+  },
+  "ms2800_tau0.003_wd0.05_h512_q13_off_cx.pt": {
+   "r2": 0.9435120820999146,
+   "mlp_r10": 33.49213306962984,
+   "lineare_r10": 30.14164119334697,
+   "divario_pp": 3.3504918762828666,
+   "divario_positive_pp": 2.1162690544271285,
+   "divario_negative_pp": 5.145162614880583,
+   "asimmetria_pp": 3.0288935604534544
+  },
+  "ms2800_tau0.003_wd0.05_h512_q14_off_cx.pt": {
+   "r2": 0.9286429286003113,
+   "mlp_r10": 32.96708395438299,
+   "lineare_r10": 29.262308642560864,
+   "divario_pp": 3.7047753118221287,
+   "divario_positive_pp": 0.4621177977453428,
+   "divario_negative_pp": 5.008212996073922,
+   "asimmetria_pp": 4.54609519832858
+  },
+  "ms2800_tau0.003_wd0.05_h512_q15_off_cx.pt": {
+   "r2": 0.9126688838005066,
+   "mlp_r10": 29.707695971492974,
+   "lineare_r10": 26.433088600643284,
+   "divario_pp": 3.27460737084969,
+   "divario_positive_pp": 2.541208504935142,
+   "divario_negative_pp": 5.316192406171474,
+   "asimmetria_pp": 2.7749839012363324
+  },
+  "ms2800_tau0.003_wd0.05_h512_q16_off_cx.pt": {
+   "r2": 0.9235197901725769,
+   "mlp_r10": 32.97727096722829,
+   "lineare_r10": 29.116420110162405,
+   "divario_pp": 3.8608508570658877,
+   "divario_positive_pp": 1.4178319204820724,
+   "divario_negative_pp": 5.582831980925825,
+   "asimmetria_pp": 4.165000060443752
+  }
+ },
+ "ensemble": {
+  "r2": 0.9298815727233887,
+  "mlp_r10": 41.25197766622891,
+  "lineare_r10": 36.62873148864108,
+  "divario_pp": 4.623246177587831,
+  "divario_positive_pp": 1.6822110649385493,
+  "divario_negative_pp": 5.774158144895573,
+  "asimmetria_pp": 4.0919470799570234
+ },
+ "riassunto": {
+  "n_membri": 6,
+  "membri_con_divario_maggiore_sui_negativi": 6,
+  "asimmetria_media_pp": 3.5268387346126957,
+  "asimmetria_sd_pp": 0.857936839892883
+ }
+}

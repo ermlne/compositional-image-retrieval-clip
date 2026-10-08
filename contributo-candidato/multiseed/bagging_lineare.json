@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "ridge": 0.001,
+  "n_fit": 12807,
+  "r2_ensemble": 0.9948998093605042,
+  "max_diff_fit_media": 1.5459954738616943e-07,
+  "media_singoli_r10": 26.76268438632149,
+  "r10": {
+    "baseline": 19.914085234168798,
+    "singolo seed 1": 26.53131539014267,
+    "singolo seed 2": 26.117253684622206,
+    "singolo seed 3": 26.41437356675992,
+    "singolo seed 4": 27.98779490376116,
+    "BAGGING (4 modelli)": 30.52604364269284,
+    "MATRICE collassata": 30.144252658523662
+  },
+  "vs_baseline": {
+    "singolo seed 1": 6.61723015597387,
+    "singolo seed 2": 6.2031684504534095,
+    "singolo seed 3": 6.500288332591121,
+    "singolo seed 4": 8.073709669592366,
+    "BAGGING (4 modelli)": 10.611958408524043,
+    "MATRICE collassata": 10.230167424354867
+  }
+}

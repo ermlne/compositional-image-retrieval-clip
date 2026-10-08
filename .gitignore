@@ -1,0 +1,21 @@
+# Data and embeddings (not redistributed)
+embeddings/
+datasets/
+data/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Run outputs
+scripts/run_prova/
+scripts/run_locale/
+*.log
+nohup.out
+.DS_Store

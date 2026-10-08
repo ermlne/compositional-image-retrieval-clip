@@ -1,0 +1,207 @@
+============================================================================================================
+CURVA SU max_sources — dove satura il guadagno da piu' esempi?
+============================================================================================================
+log  : curva_max_sources_seed5_20260829-0133.txt
+json : curva_max_sources_seed5_20260829-0133.json
+seed 5 (nuovo), tau 0.03, 30 epoche, 8 thread
+livelli di max_sources: [80, 175, 350]  + controllo sui passi di gradiente
+query: {1: 80, 2: 80, 3: 60} (identiche a tutti i livelli — qui varia SOLO max_sources)
+
+[     0s] carico gli embedding...
+[     2s] train (162770, 512), valid (19867, 512), dev 101 query
+[     2s] corpus di addestramento (20000, 512)
+[     2s] costruisco le direzioni testuali (10 template)...
+[    14s] direzioni (40, 512)
+[    14s] 220 query campionate (le stesse per ogni livello)
+
+============================================================================================================
+COSTRUZIONE DEI DATI — tutti i livelli prima di addestrare, per vedere i budget
+============================================================================================================
+  max_sources   80:  171 query valide,   4422 esempi,  18 batch/epoca,   540 passi   (21s)
+  max_sources  175:  176 query valide,   9388 esempi,  37 batch/epoca,  1110 passi   (45s)
+  max_sources  350:  182 query valide,  18222 esempi,  72 batch/epoca,  2160 passi   (90s)
+  controllo passi : max_sources 80 per 120 epoche = 2160 passi, contro i 2160 del livello 350
+
+  costo relativo totale: 11.2x il livello 80
+  (il livello 80 da solo e' costato ~10 minuti nelle run precedenti, quindi la stima e' ~112 minuti)
+
+[   176s] baseline sul set di sviluppo: 19.91%  OK
+
+============================================================================================================
+ADDESTRAMENTO
+============================================================================================================
+
+--- max_sources 80: 4422 esempi, 18 batch/epoca, 30 epoche, 540 passi ---
+  epoca    1/30  loss  5.644  caso  6.857  divario  1.214  gamma  1.005  fit 14.29%  [   182s]
+  epoca    2/30  loss  5.413  caso  6.863  divario  1.450  gamma  1.010  fit 18.19%  [   188s]
+  epoca    3/30  loss  5.188  caso  6.856  divario  1.667  gamma  1.017  fit 21.03%  [   193s]
+  epoca    4/30  loss  4.981  caso  6.854  divario  1.873  gamma  1.024  fit 26.56%  [   199s]
+  epoca    5/30  loss  4.824  caso  6.857  divario  2.034  gamma  1.031  fit 28.83%  [   204s]
+  epoca    6/30  loss  4.660  caso  6.859  divario  2.199  gamma  1.037  fit 32.53%  [   210s]
+  epoca    7/30  loss  4.553  caso  6.857  divario  2.304  gamma  1.044  fit 35.29%  [   216s]
+  epoca    8/30  loss  4.447  caso  6.859  divario  2.412  gamma  1.050  fit 37.45%  [   222s]
+  epoca    9/30  loss  4.347  caso  6.852  divario  2.505  gamma  1.055  fit 42.16%  [   227s]
+  epoca   10/30  loss  4.263  caso  6.849  divario  2.586  gamma  1.061  fit 42.40%  |  dev 25.97%  divario 16.43  [   239s]
+  epoca   11/30  loss  4.212  caso  6.860  divario  2.648  gamma  1.065  fit 45.77%  [   245s]
+  epoca   12/30  loss  4.139  caso  6.854  divario  2.715  gamma  1.070  fit 47.04%  [   251s]
+  epoca   13/30  loss  4.098  caso  6.858  divario  2.760  gamma  1.074  fit 47.70%  [   256s]
+  epoca   14/30  loss  4.047  caso  6.862  divario  2.815  gamma  1.078  fit 49.15%  [   260s]
+  epoca   15/30  loss  4.003  caso  6.861  divario  2.858  gamma  1.083  fit 50.39%  [   265s]
+  epoca   16/30  loss  3.954  caso  6.848  divario  2.894  gamma  1.087  fit 51.09%  [   269s]
+  epoca   17/30  loss  3.914  caso  6.852  divario  2.938  gamma  1.091  fit 53.29%  [   273s]
+  epoca   18/30  loss  3.874  caso  6.848  divario  2.974  gamma  1.095  fit 55.42%  [   277s]
+  epoca   19/30  loss  3.857  caso  6.866  divario  3.009  gamma  1.099  fit 56.42%  [   281s]
+  epoca   20/30  loss  3.818  caso  6.856  divario  3.038  gamma  1.103  fit 57.15%  |  dev 27.01%  divario 30.14  [   291s]
+  epoca   21/30  loss  3.790  caso  6.858  divario  3.068  gamma  1.106  fit 59.01%  [   296s]
+  epoca   22/30  loss  3.756  caso  6.853  divario  3.097  gamma  1.110  fit 58.89%  [   300s]
+  epoca   23/30  loss  3.723  caso  6.851  divario  3.129  gamma  1.114  fit 61.07%  [   304s]
+  epoca   24/30  loss  3.707  caso  6.861  divario  3.155  gamma  1.118  fit 60.38%  [   308s]
+  epoca   25/30  loss  3.692  caso  6.865  divario  3.173  gamma  1.121  fit 61.67%  [   312s]
+  epoca   26/30  loss  3.654  caso  6.856  divario  3.202  gamma  1.125  fit 60.98%  [   317s]
+  epoca   27/30  loss  3.629  caso  6.853  divario  3.224  gamma  1.129  fit 61.62%  [   324s]
+  epoca   28/30  loss  3.600  caso  6.857  divario  3.257  gamma  1.132  fit 62.55%  [   329s]
+  epoca   29/30  loss  3.586  caso  6.858  divario  3.272  gamma  1.136  fit 63.83%  [   335s]
+  epoca   30/30  loss  3.567  caso  6.856  divario  3.289  gamma  1.140  fit 63.93%  |  dev 26.40%  divario 37.52  [   347s]
+  -> max_sources 80: dev 26.40%  (+6.49pp sulla baseline)  [   353s]
+
+--- max_sources 175: 9388 esempi, 37 batch/epoca, 30 epoche, 1110 passi ---
+  epoca    1/30  loss  5.500  caso  6.820  divario  1.321  gamma  1.010  fit 14.26%  [   365s]
+  epoca    2/30  loss  5.089  caso  6.820  divario  1.730  gamma  1.024  fit 19.43%  [   376s]
+  epoca    3/30  loss  4.787  caso  6.821  divario  2.034  gamma  1.037  fit 29.11%  [   387s]
+  epoca    4/30  loss  4.570  caso  6.820  divario  2.250  gamma  1.049  fit 33.63%  [   397s]
+  epoca    5/30  loss  4.424  caso  6.822  divario  2.398  gamma  1.060  fit 36.63%  [   409s]
+  epoca    6/30  loss  4.308  caso  6.820  divario  2.512  gamma  1.070  fit 39.37%  [   420s]
+  epoca    7/30  loss  4.225  caso  6.822  divario  2.596  gamma  1.078  fit 41.24%  [   431s]
+  epoca    8/30  loss  4.155  caso  6.821  divario  2.666  gamma  1.087  fit 42.13%  [   442s]
+  epoca    9/30  loss  4.096  caso  6.821  divario  2.725  gamma  1.094  fit 44.83%  [   454s]
+  epoca   10/30  loss  4.046  caso  6.821  divario  2.774  gamma  1.102  fit 46.83%  |  dev 29.33%  divario 17.50  [   476s]
+  epoca   11/30  loss  4.004  caso  6.820  divario  2.817  gamma  1.109  fit 49.59%  [   488s]
+  epoca   12/30  loss  3.966  caso  6.820  divario  2.854  gamma  1.115  fit 49.00%  [   501s]
+  epoca   13/30  loss  3.930  caso  6.821  divario  2.890  gamma  1.122  fit 55.05%  [   515s]
+  epoca   14/30  loss  3.898  caso  6.821  divario  2.923  gamma  1.129  fit 55.37%  [   529s]
+  epoca   15/30  loss  3.871  caso  6.820  divario  2.949  gamma  1.135  fit 57.06%  [   540s]
+  epoca   16/30  loss  3.844  caso  6.820  divario  2.976  gamma  1.141  fit 58.38%  [   552s]
+  epoca   17/30  loss  3.813  caso  6.821  divario  3.007  gamma  1.148  fit 60.20%  [   563s]
+  epoca   18/30  loss  3.792  caso  6.821  divario  3.029  gamma  1.154  fit 60.63%  [   575s]
+  epoca   19/30  loss  3.769  caso  6.822  divario  3.053  gamma  1.161  fit 62.58%  [   586s]
+  epoca   20/30  loss  3.744  caso  6.820  divario  3.076  gamma  1.167  fit 63.95%  |  dev 29.40%  divario 34.55  [   603s]
+  epoca   21/30  loss  3.725  caso  6.820  divario  3.095  gamma  1.173  fit 63.89%  [   615s]
+  epoca   22/30  loss  3.705  caso  6.820  divario  3.115  gamma  1.179  fit 63.81%  [   626s]
+  epoca   23/30  loss  3.683  caso  6.820  divario  3.137  gamma  1.185  fit 65.41%  [   637s]
+  epoca   24/30  loss  3.670  caso  6.820  divario  3.150  gamma  1.191  fit 66.02%  [   648s]
+  epoca   25/30  loss  3.650  caso  6.821  divario  3.171  gamma  1.197  fit 64.72%  [   659s]
+  epoca   26/30  loss  3.630  caso  6.820  divario  3.191  gamma  1.203  fit 66.58%  [   670s]
+  epoca   27/30  loss  3.608  caso  6.820  divario  3.212  gamma  1.209  fit 65.88%  [   682s]
+  epoca   28/30  loss  3.590  caso  6.820  divario  3.230  gamma  1.215  fit 68.10%  [   693s]
+  epoca   29/30  loss  3.574  caso  6.820  divario  3.246  gamma  1.221  fit 69.85%  [   705s]
+  epoca   30/30  loss  3.561  caso  6.820  divario  3.259  gamma  1.227  fit 69.58%  |  dev 29.22%  divario 40.35  [   724s]
+  -> max_sources 175: dev 29.22%  (+9.31pp sulla baseline)  [   731s]
+
+--- max_sources 350: 18222 esempi, 72 batch/epoca, 30 epoche, 2160 passi ---
+  epoca    1/30  loss  5.297  caso  6.814  divario  1.517  gamma  1.024  fit 20.00%  [   755s]
+  epoca    2/30  loss  4.724  caso  6.814  divario  2.090  gamma  1.049  fit 26.31%  [   779s]
+  epoca    3/30  loss  4.449  caso  6.819  divario  2.370  gamma  1.069  fit 31.79%  [   807s]
+  epoca    4/30  loss  4.292  caso  6.815  divario  2.523  gamma  1.085  fit 37.84%  [   830s]
+  epoca    5/30  loss  4.197  caso  6.818  divario  2.621  gamma  1.099  fit 41.10%  [   855s]
+  epoca    6/30  loss  4.126  caso  6.818  divario  2.691  gamma  1.112  fit 43.22%  [   877s]
+  epoca    7/30  loss  4.071  caso  6.817  divario  2.747  gamma  1.124  fit 46.04%  [   900s]
+  epoca    8/30  loss  4.026  caso  6.817  divario  2.791  gamma  1.136  fit 47.87%  [   922s]
+  epoca    9/30  loss  3.987  caso  6.818  divario  2.831  gamma  1.146  fit 48.44%  [   943s]
+  epoca   10/30  loss  3.955  caso  6.814  divario  2.859  gamma  1.157  fit 48.91%  |  dev 31.09%  divario 17.81  [   971s]
+  epoca   11/30  loss  3.924  caso  6.815  divario  2.891  gamma  1.167  fit 51.14%  [   991s]
+  epoca   12/30  loss  3.898  caso  6.816  divario  2.918  gamma  1.176  fit 51.31%  [  1009s]
+  epoca   13/30  loss  3.868  caso  6.815  divario  2.946  gamma  1.187  fit 52.44%  [  1027s]
+  epoca   14/30  loss  3.849  caso  6.816  divario  2.967  gamma  1.197  fit 52.86%  [  1049s]
+  epoca   15/30  loss  3.826  caso  6.818  divario  2.992  gamma  1.206  fit 53.46%  [  1071s]
+  epoca   16/30  loss  3.804  caso  6.817  divario  3.013  gamma  1.215  fit 53.58%  [  1092s]
+  epoca   17/30  loss  3.788  caso  6.819  divario  3.031  gamma  1.224  fit 54.44%  [  1116s]
+  epoca   18/30  loss  3.769  caso  6.815  divario  3.046  gamma  1.233  fit 55.83%  [  1139s]
+  epoca   19/30  loss  3.749  caso  6.817  divario  3.068  gamma  1.242  fit 55.41%  [  1161s]
+  epoca   20/30  loss  3.731  caso  6.819  divario  3.087  gamma  1.251  fit 56.46%  |  dev 32.07%  divario 24.38  [  1190s]
+  epoca   21/30  loss  3.709  caso  6.816  divario  3.107  gamma  1.260  fit 57.66%  [  1217s]
+  epoca   22/30  loss  3.691  caso  6.816  divario  3.125  gamma  1.270  fit 58.21%  [  1244s]
+  epoca   23/30  loss  3.680  caso  6.818  divario  3.137  gamma  1.278  fit 58.80%  [  1270s]
+  epoca   24/30  loss  3.668  caso  6.818  divario  3.151  gamma  1.287  fit 59.80%  [  1293s]
+  epoca   25/30  loss  3.659  caso  6.818  divario  3.159  gamma  1.295  fit 59.26%  [  1312s]
+  epoca   26/30  loss  3.634  caso  6.819  divario  3.185  gamma  1.304  fit 61.41%  [  1329s]
+  epoca   27/30  loss  3.622  caso  6.819  divario  3.196  gamma  1.313  fit 60.72%  [  1346s]
+  epoca   28/30  loss  3.610  caso  6.817  divario  3.207  gamma  1.321  fit 61.69%  [  1363s]
+  epoca   29/30  loss  3.599  caso  6.816  divario  3.218  gamma  1.330  fit 62.62%  [  1380s]
+  epoca   30/30  loss  3.581  caso  6.818  divario  3.237  gamma  1.340  fit 62.92%  |  dev 32.26%  divario 30.66  [  1403s]
+  -> max_sources 350: dev 32.26%  (+12.35pp sulla baseline)  [  1408s]
+
+--- controllo passi (ms 80, 120 epoche): 4422 esempi, 18 batch/epoca, 120 epoche, 2160 passi ---
+  epoca    1/120  loss  5.644  caso  6.857  divario  1.214  gamma  1.005  fit 14.29%  [  1413s]
+  epoca    2/120  loss  5.413  caso  6.863  divario  1.450  gamma  1.010  fit 18.19%  [  1419s]
+  epoca    3/120  loss  5.188  caso  6.856  divario  1.667  gamma  1.017  fit 21.03%  [  1423s]
+  epoca    4/120  loss  4.981  caso  6.854  divario  1.873  gamma  1.024  fit 26.56%  [  1428s]
+  epoca    5/120  loss  4.824  caso  6.857  divario  2.034  gamma  1.031  fit 28.83%  [  1432s]
+  epoca    6/120  loss  4.660  caso  6.859  divario  2.199  gamma  1.037  fit 32.53%  [  1436s]
+  epoca    7/120  loss  4.553  caso  6.857  divario  2.304  gamma  1.044  fit 35.29%  [  1440s]
+  epoca    8/120  loss  4.447  caso  6.859  divario  2.412  gamma  1.050  fit 37.45%  [  1446s]
+  epoca    9/120  loss  4.347  caso  6.852  divario  2.505  gamma  1.055  fit 42.16%  [  1452s]
+  epoca   10/120  loss  4.263  caso  6.849  divario  2.586  gamma  1.061  fit 42.40%  |  dev 25.97%  divario 16.43  [  1463s]
+  epoca   11/120  loss  4.212  caso  6.860  divario  2.648  gamma  1.065  fit 45.77%  [  1469s]
+  epoca   12/120  loss  4.139  caso  6.854  divario  2.715  gamma  1.070  fit 47.04%  [  1474s]
+  epoca   13/120  loss  4.098  caso  6.858  divario  2.760  gamma  1.074  fit 47.70%  [  1479s]
+  epoca   14/120  loss  4.047  caso  6.862  divario  2.815  gamma  1.078  fit 49.15%  [  1483s]
+  epoca   15/120  loss  4.003  caso  6.861  divario  2.858  gamma  1.083  fit 50.39%  [  1488s]
+  epoca   16/120  loss  3.954  caso  6.848  divario  2.894  gamma  1.087  fit 51.09%  [  1493s]
+  epoca   17/120  loss  3.914  caso  6.852  divario  2.938  gamma  1.091  fit 53.29%  [  1499s]
+  epoca   18/120  loss  3.874  caso  6.848  divario  2.974  gamma  1.095  fit 55.42%  [  1504s]
+  epoca   19/120  loss  3.857  caso  6.866  divario  3.009  gamma  1.099  fit 56.42%  [  1510s]
+  epoca   20/120  loss  3.818  caso  6.856  divario  3.038  gamma  1.103  fit 57.15%  |  dev 27.01%  divario 30.14  [  1525s]
+  epoca   21/120  loss  3.790  caso  6.858  divario  3.068  gamma  1.106  fit 59.01%  [  1531s]
+  epoca   22/120  loss  3.756  caso  6.853  divario  3.097  gamma  1.110  fit 58.89%  [  1538s]
+  epoca   23/120  loss  3.723  caso  6.851  divario  3.129  gamma  1.114  fit 61.07%  [  1543s]
+  epoca   24/120  loss  3.707  caso  6.861  divario  3.155  gamma  1.118  fit 60.38%  [  1549s]
+  epoca   25/120  loss  3.692  caso  6.865  divario  3.173  gamma  1.121  fit 61.67%  [  1555s]
+  epoca   26/120  loss  3.654  caso  6.856  divario  3.202  gamma  1.125  fit 60.98%  [  1561s]
+  epoca   27/120  loss  3.629  caso  6.853  divario  3.224  gamma  1.129  fit 61.62%  [  1567s]
+  epoca   28/120  loss  3.600  caso  6.857  divario  3.257  gamma  1.132  fit 62.55%  [  1573s]
+  epoca   29/120  loss  3.586  caso  6.858  divario  3.272  gamma  1.136  fit 63.83%  [  1578s]
+  epoca   30/120  loss  3.567  caso  6.856  divario  3.289  gamma  1.140  fit 63.93%  |  dev 26.40%  divario 37.52  [  1588s]
+  epoca   31/120  loss  3.528  caso  6.850  divario  3.322  gamma  1.144  fit 64.74%  [  1592s]
+  epoca   32/120  loss  3.513  caso  6.849  divario  3.336  gamma  1.148  fit 67.40%  [  1596s]
+  epoca   33/120  loss  3.491  caso  6.850  divario  3.359  gamma  1.151  fit 68.26%  [  1600s]
+  epoca   34/120  loss  3.470  caso  6.852  divario  3.382  gamma  1.155  fit 68.34%  [  1605s]
+  epoca   35/120  loss  3.464  caso  6.867  divario  3.403  gamma  1.158  fit 68.81%  [  1609s]
+  epoca   36/120  loss  3.437  caso  6.865  divario  3.428  gamma  1.162  fit 70.39%  [  1613s]
+  epoca   37/120  loss  3.420  caso  6.856  divario  3.436  gamma  1.166  fit 71.12%  [  1617s]
+  epoca   38/120  loss  3.395  caso  6.850  divario  3.455  gamma  1.170  fit 72.44%  [  1622s]
+  epoca   39/120  loss  3.357  caso  6.845  divario  3.489  gamma  1.174  fit 72.36%  [  1626s]
+  epoca   40/120  loss  3.349  caso  6.856  divario  3.507  gamma  1.177  fit 72.88%  |  dev 26.58%  divario 46.30  [  1638s]
+  epoca   41/120  loss  3.330  caso  6.853  divario  3.523  gamma  1.181  fit 73.03%  [  1643s]
+  epoca   42/120  loss  3.314  caso  6.855  divario  3.541  gamma  1.185  fit 73.64%  [  1649s]
+  epoca   43/120  loss  3.298  caso  6.854  divario  3.556  gamma  1.189  fit 74.93%  [  1654s]
+  epoca   44/120  loss  3.282  caso  6.855  divario  3.573  gamma  1.193  fit 73.69%  [  1660s]
+  epoca   45/120  loss  3.268  caso  6.859  divario  3.592  gamma  1.197  fit 74.75%  [  1665s]
+  epoca   46/120  loss  3.245  caso  6.841  divario  3.596  gamma  1.200  fit 75.17%  [  1671s]
+  epoca   47/120  loss  3.229  caso  6.863  divario  3.635  gamma  1.204  fit 76.31%  [  1677s]
+  epoca   48/120  loss  3.217  caso  6.857  divario  3.640  gamma  1.208  fit 77.32%  [  1683s]
+  epoca   49/120  loss  3.175  caso  6.849  divario  3.674  gamma  1.212  fit 77.38%  [  1689s]
+  epoca   50/120  loss  3.169  caso  6.847  divario  3.677  gamma  1.216  fit 77.09%  |  dev 25.84%  divario 51.26  [  1701s]
+  epoca   51/120  loss  3.143  caso  6.850  divario  3.707  gamma  1.220  fit 79.07%  [  1706s]
+  epoca   52/120  loss  3.137  caso  6.843  divario  3.707  gamma  1.224  fit 78.21%  [  1712s]
+  epoca   53/120  loss  3.119  caso  6.854  divario  3.735  gamma  1.228  fit 78.78%  [  1717s]
+  epoca   54/120  loss  3.096  caso  6.850  divario  3.754  gamma  1.232  fit 79.42%  [  1723s]
+  epoca   55/120  loss  3.087  caso  6.863  divario  3.776  gamma  1.236  fit 80.40%  [  1729s]
+  epoca   56/120  loss  3.084  caso  6.858  divario  3.774  gamma  1.240  fit 80.74%  [  1735s]
+  epoca   57/120  loss  3.050  caso  6.851  divario  3.801  gamma  1.244  fit 81.10%  [  1740s]
+  epoca   58/120  loss  3.037  caso  6.856  divario  3.819  gamma  1.248  fit 81.41%  [  1746s]
+  epoca   59/120  loss  3.026  caso  6.860  divario  3.834  gamma  1.252  fit 81.85%  [  1752s]
+  epoca   60/120  loss  3.021  caso  6.856  divario  3.835  gamma  1.256  fit 81.59%  |  dev 25.49%  divario 56.09  [  1763s]
+  epoca   61/120  loss  2.997  caso  6.863  divario  3.865  gamma  1.260  fit 82.42%  [  1769s]
+  epoca   62/120  loss  2.974  caso  6.862  divario  3.887  gamma  1.263  fit 81.89%  [  1775s]
+  epoca   63/120  loss  2.948  caso  6.863  divario  3.915  gamma  1.267  fit 83.03%  [  1781s]
+  epoca   64/120  loss  2.939  caso  6.862  divario  3.922  gamma  1.272  fit 84.28%  [  1786s]
+  epoca   65/120  loss  2.924  caso  6.860  divario  3.937  gamma  1.276  fit 83.41%  [  1792s]
+  epoca   66/120  loss  2.915  caso  6.859  divario  3.944  gamma  1.280  fit 84.46%  [  1798s]
+  epoca   67/120  loss  2.906  caso  6.860  divario  3.954  gamma  1.284  fit 85.51%  [  1806s]
+  epoca   68/120  loss  2.879  caso  6.859  divario  3.980  gamma  1.288  fit 84.89%  [  1821s]
+  epoca   69/120  loss  2.869  caso  6.864  divario  3.994  gamma  1.292  fit 85.17%  [  1835s]
+  epoca   70/120  loss  2.849  caso  6.855  divario  4.005  gamma  1.296  fit 85.44%  |  dev 25.42%  divario 60.02  [  1864s]
+  epoca   71/120  loss  2.842  caso  6.862  divario  4.020  gamma  1.300  fit 85.08%  [  1877s]
+  epoca   72/120  loss  2.838  caso  6.868  divario  4.030  gamma  1.304  fit 86.70%  [  1888s]
+  epoca   73/120  loss  2.807  caso  6.847  divario  4.040  gamma  1.308  fit 86.14%  [  1896s]
+  epoca   74/120  loss  2.799  caso  6.853  divario  4.054  gamma  1.312  fit 85.79%  [  1905s]
